@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class Gamemanager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    private bool isAttack = false;
+
+
+    private void isAttackMonster()
     {
-        
+        //몬스터를 공격
+        isAttack = !isAttack;
+    }
+    
+    private void isAttackPlayer()
+    {
+        //플레이어를 공격
+        isAttack = !isAttack;
     }
 }
