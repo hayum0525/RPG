@@ -48,23 +48,22 @@ public class Monster : MonoBehaviour
         if (hits.Length == 0)
         {
             target = null;
-            MoveReturn();
-            
+            ReturnPlace();
         }
     }
 
     void MoveTowardsTarget()
-    {
-        
+    {  
             //플레이어 추적 
            Vector3 direction = (target.position - transform.position).normalized;
             // 방향으로 이동
-           transform.position += direction * 3f * Time.deltaTime;     
+           transform.position += direction * 1f * Time.deltaTime;     
     }
 
-    void MoveReturn()
+    void ReturnPlace()
     {
-        transform.position = Vector3.MoveTowards(transform.position, returnPosition, 3 * Time.deltaTime);
+        //원래 위치로 되돌아 가기 
+        //transform.position = Vector3.MoveTowards(transform.position, returnPosition, 3 * Time.deltaTime);
     }
 
     
