@@ -10,6 +10,8 @@ public class Monster : MonoBehaviour
     private float radius = 2f; 
 
     private Transform target;
+    [SerializeField]
+    private Vector3 returnPosition;
 
 
     private void Start()
@@ -46,12 +48,14 @@ public class Monster : MonoBehaviour
         if (hits.Length == 0)
         {
             target = null;
+            MoveReturn();
             
         }
     }
 
     void MoveTowardsTarget()
     {
+        
             //플레이어 추적 
            Vector3 direction = (target.position - transform.position).normalized;
             // 방향으로 이동
@@ -60,7 +64,7 @@ public class Monster : MonoBehaviour
 
     void MoveReturn()
     {
-
+        transform.position = Vector3.MoveTowards(transform.position, returnPosition, 3 * Time.deltaTime);
     }
 
     
