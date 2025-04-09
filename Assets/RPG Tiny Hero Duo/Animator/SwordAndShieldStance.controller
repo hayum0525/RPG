@@ -83,7 +83,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MoveFWD_Normal_InPlace_SwordAndShield 0
+  m_Name: isWalk
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -727,7 +727,7 @@ AnimatorController:
   m_Name: SwordAndShieldStance
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: isRun
+  - m_Name: isWalk
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -1213,7 +1213,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: isRun
+    m_ConditionEvent: isWalk
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -7942452385628606970}
@@ -1221,9 +1221,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.069256544
-  m_TransitionOffset: 0.3388935
-  m_ExitTime: 0.8961152
+  m_TransitionDuration: 0.034430683
+  m_TransitionOffset: 0.40419197
+  m_ExitTime: 0.948354
   m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
