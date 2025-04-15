@@ -7,27 +7,27 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private float movespeed;
 
-    private Animator anim;
-    private bool isWalk = false;
-    private bool isAttack = false;
+    private Animator animator;
 
+   
 
     private void Awake()
     {
-        anim = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
     {
 
         playerMovement();
-        Animation();
+        
 
         
     }
 
     void playerMovement()
     {
+
         float hAxis = Input.GetAxisRaw("Horizontal");
         float vAxis = Input.GetAxisRaw("Vertical");
 
@@ -36,20 +36,15 @@ public class PlayerMovement : MonoBehaviour
 
         transform.position += inputDir * movespeed * Time.deltaTime;
 
-        transform.LookAt(transform.position + inputDir);
-        
-    }
+        if (inputDir != Vector3.zero)
+        {
+            transform.LookAt(transform.position + inputDir);
+            animator.SetBool("isWalk", true);  // 걷는 중
+        }
+        else
+        {
+            animator.SetBool("isWalk", false);
+        }
 
-    void Animation()
-    {
-        if(isWalk)
-        {
-            anim.SetBool("isWalk", true);
-        }
-        if(isAttack)
-        {
-            anim.SetBool("isAttack", true);
-        }
-        
     }
 }

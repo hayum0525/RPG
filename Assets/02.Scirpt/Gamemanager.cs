@@ -6,6 +6,14 @@ public class Gamemanager : MonoBehaviour
 {
 
     private bool isAttack = false;
+    
+
+
+
+    void Playerstate()
+    {
+
+    }
 
 
     private void isAttackMonster()
