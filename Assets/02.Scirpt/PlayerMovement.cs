@@ -4,24 +4,16 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField]
-    private float movespeed;
+    [SerializeField] private float movespeed;
+   // private Vector3 moveinput;
 
-    private Animator anim;
-    private bool isWalk = false;
-    private bool isAttack = false;
-
-
-    private void Awake()
-    {
-        anim = GetComponent<Animator>();
-    }
+  
 
     private void Update()
     {
 
         playerMovement();
-        Animation();
+       // Animation();
 
         
     }
@@ -37,10 +29,14 @@ public class PlayerMovement : MonoBehaviour
         transform.position += inputDir * movespeed * Time.deltaTime;
 
         transform.LookAt(transform.position + inputDir);
-        
+
+       // bool iswalk = moveinput != Vector3.zero;
+        GameManager.Instance.IsWalk();
+
+
     }
 
-    void Animation()
+   /* void Animation()
     {
         if(isWalk)
         {
@@ -51,5 +47,5 @@ public class PlayerMovement : MonoBehaviour
             anim.SetBool("isAttack", true);
         }
         
-    }
+    }*/
 }
